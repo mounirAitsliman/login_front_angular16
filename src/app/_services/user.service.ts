@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const API_URL = 'http://localhost:8080/api/v1/test/';
@@ -15,7 +15,14 @@ export class UserService {
   }
 
   getUserBoard(): Observable<any> {
-    return this.http.get(API_URL + 'user', { responseType: 'text' });
+
+
+
+    return this.http.get(API_URL + 'user');
+
+
+
+
   }
   
   getModeratorBoard(): Observable<any> {
